@@ -19,8 +19,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: enriikke/gatsby-gh-pages-action@v2
+      - uses: actions/checkout@v3
+      - uses: hrenaud/gatsby-gh-pages-action@v3
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
 ```
@@ -65,7 +65,6 @@ configuration options:
   will run from this directory.
   Provided as an [input][github-action-input].
   Defaults to the project's root.
-  
 - **git-config-name**: Provide a custom name that is used to author the git commit, which
   is pushed to the deploy branch.
   Provided as an [input][github-action-input].
@@ -74,9 +73,9 @@ configuration options:
 - **git-config-email**: Provide a custom email that is used to author the git commit, which
   is pushed to the deploy branch.
   Provided as an [input][github-action-input].
-  Defaults to `{actor}@users.noreply.github.com`, where `{actor}` is the GitHub username 
+  Defaults to `{actor}@users.noreply.github.com`, where `{actor}` is the GitHub username
   of the action actor.
-  
+
 ### Org or User Pages
 
 Create a repository with the format `<YOUR/ORG USERNAME>.github.io`, push your
@@ -93,8 +92,8 @@ prefix is via `gatsby-config.js`:
 
 ```js
 module.exports = {
-  pathPrefix: "/reponame",
-}
+  pathPrefix: '/reponame',
+};
 ```
 
 Additionally, you need to tell the `gatsby build` command to use it by passing
@@ -112,8 +111,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: enriikke/gatsby-gh-pages-action@v2
+      - uses: actions/checkout@v3
+      - uses: hrenaud/gatsby-gh-pages-action@v3
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
           deploy-branch: gh-pages
@@ -134,8 +133,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: enriikke/gatsby-gh-pages-action@v2
+      - uses: actions/checkout@v3
+      - uses: hrenaud/gatsby-gh-pages-action@v3
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
           deploy-branch: gh-pages
